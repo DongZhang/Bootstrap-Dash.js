@@ -25,20 +25,25 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -47,12 +52,10 @@ table {
 /* @group reset end */
 
 
-
 /* trunk css */
 
 body {
-	background-color: #ddd;
-	
+	background-color: #fff;
 	font: 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	color: #555555;
 	text-rendering: optimizelegibility;
@@ -77,11 +80,12 @@ a {
 header {
 	height: 60px;
 	position: relative;
-	background-color: #ffffff;
+	background-color: #3b5998;
+	z-index: 1;
 }
 
 header h1 {
-	color: #9aa6af;
+	color: #ffffff;
 	text-align: left;
 	font-size: 27px;
 	line-height: 60px;
@@ -98,7 +102,7 @@ header h1 {
 	border-style: solid;
 	border-width: 0;
 	border-radius: 10px;
-	background-color: #9aa6af;
+	/*background-color: #3b5998;*/
 	display: none;
 }
 
@@ -134,62 +138,41 @@ nav li a {
 	display: block;
 }
 
-nav li a:hover {color: #000;}
-
-
-
-
-/*  Removable CSS  */
-
-.header-section {
-	background-color: #ffffff;
+nav li a:hover {
+	color: #000;
 }
 
-.body-section {
-	height: auto;
-	background-color: #ffffff;
+.content {
+	z-index: 0;
+	padding-top: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	min-height: 500px;
+	height: 100%;
+	background-color: #639bf1;
+	opacity: 1;
 }
 
-.footer-section {
-	background-color: #dadee1;
-}
 
-.placefiller {
-	text-align: center;
-	font-size: 20px;
-}
+/*  Customizable CSS  */
 
-.header-section .placefiller {
-	line-height: 300px;
-}
+/* show NavToggle on MD screen or smaller*/
+@media only screen and (max-width: 992px) {
 
-.body-section .placefiller {
-	line-height: 900px;
-}
-
-.footer-section .placefiller {
-	line-height: 200px;
-	border: 1px dashed rgba(190, 196, 202, 0.9);
-}
-
-@media only screen and (max-width: 991px) {
+/* show NavToggle on SM screen or smaller*/
+/*@media only screen and (max-width: 768px) {*/
 
 header {
 	opacity: 1;
 	height: 60px;
 	z-index: 1;
-	background-color: #ffffff;
-	border-bottom: solid;
-	border-color: #eeeeee;
-	border-width: 2px;
+	background-color: #293e6a;
 	margin: 0;
-	
 	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
-	
-		/* starting point */
+	/* starting point */
 	-webkit-transform: translate3d(0,0,0);
 	-moz-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
@@ -197,14 +180,20 @@ header {
 
 header h1 {
 	margin-top: 0;
-	color: #9aa6af;
+	color: #ffffff;
 	text-align: center;
 	padding-left: 0;
 	display: block;
 }
 
-.burger {display: block;}
+.burger {
+	display: block;
+}
 
+.content {
+	margin-top: 60px;
+}
+}
 
 /*  Nav Drawer Layout  */
 
@@ -226,6 +215,8 @@ nav li a {
 	padding: 22px 25px;
 	letter-spacing: 3px;
 	font-size: 14px;
+	color: #fff;
+	text-decoration: none;
 }
 
 nav li a.logo {
@@ -234,24 +225,17 @@ nav li a.logo {
 
 nav li a.active {
 	color: #fff;
-	background-color: #141e23;
+	background-color: #fff;
 }
 
 nav li a:hover {
 	color: #fff;
-	background-color: #19252c;
+	background-color: #293e6a;
+	text-decoration: none;
 }
 
 nav li:first-child a.active, nav li:first-child a:hover {
 	border-radius: 10px 0 0 0;
-}
-
-.header-section {
-	margin-top: 60px;
-}
-
-.body-section {
-	margin-top: 60px;
 }
 
 /* NAVIGATION ANNIMATION */
@@ -262,7 +246,7 @@ nav {
 	left: 0;
 	top: 0;
 	margin: 0;
-	background-color: #1d2d35;
+	background-color: #3b5998;
 	border-radius: 8px;
 	
 	/* starting point */
@@ -285,18 +269,21 @@ nav.open {
 	transform: translate3d(0,0,0)scale(1);
 	animation: slideIn .35s ease-in-out;
 }
+
 @-webkit-keyframes slideIn {
 	0%       {opacity: 0;
 				-webkit-transform: translate3d(5%,0,0)scale(.97);}
 	100%  {opacity: 1;
 				-webkit-transform: translate3d(0,0,0)scale(1);}
 }
+
 @-moz-keyframes slideIn {
 	0%      {opacity: 0;
 				-moz-transform: translate3d(5%,0,0)scale(.97);}
 	100%  {opacity: 1;
 				-moz-transform: translate3d(0,0,0)scale(1);}
 }
+
 @keyframes slideIn {
 	0%      {opacity: 0;
 				transform: translate3d(5%,0,0)scale(.97);}
@@ -322,18 +309,21 @@ nav.closed {
 	transform: translate3d(5%,0,0)scale(.97);
 	animation: slideOut .3s ease-in-out;
 }
+
 @-webkit-keyframes slideOut {
 	0%      {opacity: 1;
 				-webkit-transform: translate3d(0,0,0)scale(1);}
 	100%  {opacity: 0;
 				-webkit-transform: translate3d(5%,0,0)scale(.97);}
 }
+
 @-moz-keyframes slideOut {
 	0%      {opacity: 1;
 				-moz-transform: translate3d(0,0,0)scale(1);}
 	100%  {opacity: 0;
 				-moz-transform: translate3d(5%,0,0)scale(.97);}
 }
+
 @keyframes slideOut {
 	0%      {opacity: 1;
 				transform: translate3d(0,0,0)scale(1);}
@@ -349,14 +339,6 @@ nav.closed {
 	-webkit-transform: translate3d(0,0,0);
 	-moz-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
-	z-index: 0;
-	padding-top: 40px;
-	padding-left: 15px;
-	padding-right: 15px;
-	min-height: 500px;
-	height: 100%;
-	background-color: #ddd;
-	opacity: 1;
 }
 
 /*Content Sliding Open Effect*/
@@ -371,16 +353,19 @@ header.open, .content.open
 	transform: translate3d(240px,0,0);
 	animation: open .5s ease-in-out;
 }
+
 @-webkit-keyframes open {
 	0%      {-webkit-transform: translate3d(0,0,0);}
 	70%    {-webkit-transform: translate3d(260px,0,0);}
 	100%  {-webkit-transform: translate3d(240px,0,0);}
 }
+
 @-moz-keyframes open {
 	0%      {-moz-transform: translate3d(0,0,0);}
 	70%    {-moz-transform: translate3d(260px,0,0);}
 	100%  {-moz-transform: translate3d(240px,0,0);}
 }
+
 @keyframes open {
 	0%      {transform: translate3d(0,0,0);}
 	70%    {transform: translate3d(260px,0,0);}
@@ -403,14 +388,17 @@ header.closed {
 	transform: translate3d(0,0,0);
 	animation: close .3s ease-in-out;
 }
+
 @-webkit-keyframes close {
 	0%      {-webkit-transform: translate3d(240px,0,0);}
 	100%  {-webkit-transform: translate3d(0,0,0);}
 }
+
 @-moz-keyframes close {
 	0%       {-moz-transform: translate3d(240px,0,0);}
 	100%  {-moz-transform: translate3d(0,0,0);}
 }
+
 @keyframes close {
 	0%       {transform: translate3d(240px,0,0);}
 	100%  {transform: translate3d(0,0,0);}
@@ -427,14 +415,17 @@ header.closed {
 	transform: translate3d(0,0,0);
 	animation: close .3s ease-in-out;
 }
+
 @-webkit-keyframes close {
 	0%      {-webkit-transform: translate3d(240px,0,0);}
 	100%  {-webkit-transform: translate3d(0,0,0);}
 }
+
 @-moz-keyframes close {
 	0%       {-moz-transform: translate3d(240px,0,0);}
 	100%  {-moz-transform: translate3d(0,0,0);}
 }
+
 @keyframes close {
 	0%       {transform: translate3d(240px,0,0);}
 	100%  {transform: translate3d(0,0,0);}
