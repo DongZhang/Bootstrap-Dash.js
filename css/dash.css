@@ -51,8 +51,7 @@ table {
 
 /* @group reset end */
 
-
-/* trunk css */
+/* Dash CSS */
 
 body {
 	background-color: #fff;
@@ -77,11 +76,15 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 header {
 	height: 60px;
 	position: relative;
 	background-color: #3b5998;
-	z-index: 1;
+	z-index: 0;
 }
 
 header h1 {
@@ -102,7 +105,7 @@ header h1 {
 	border-style: solid;
 	border-width: 0;
 	border-radius: 10px;
-	/*background-color: #3b5998;*/
+	background-color: #3b5998;
 	display: none;
 }
 
@@ -120,27 +123,39 @@ header h1 {
 
 nav {
 	height: 60px;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 5px;
-	z-index: 0;
+	z-index: 1;
 }
 
 nav li {
-	float: left;
-	display: inline-block;
+	display: block;
+	height: 40px;
 }
 
 nav li a {
-	font-size: 13px;
+	font-size: 15px;
 	color: #9aa6af;
-	padding: 24px 15px;
+	padding-top: 12px;
+	padding-left: 15px;
+	padding-bottom: 11px;
 	display: block;
 }
 
 nav li a:hover {
 	color: #000;
 }
+
+.side {
+	background-color: white;
+	width: 200px;
+	left: 0;
+	margin-top: 60px;
+	height: 100%;
+	display: block;
+}
+
 
 .content {
 	z-index: 0;
@@ -154,13 +169,9 @@ nav li a:hover {
 }
 
 
-/*  Customizable CSS  */
 
 /* show NavToggle on MD screen or smaller*/
 @media only screen and (max-width: 992px) {
-
-/* show NavToggle on SM screen or smaller*/
-/*@media only screen and (max-width: 768px) {*/
 
 header {
 	opacity: 1;
@@ -192,241 +203,4 @@ header h1 {
 
 .content {
 	margin-top: 60px;
-}
-}
-
-/*  Nav Drawer Layout  */
-
-nav {
-	position: relative;
-}
-
-nav ul {
-	height: 100%;
-	overflow-y: auto;
-}
-
-nav li {
-	display: block;
-	float: none;
-}
-
-nav li a {
-	padding: 22px 25px;
-	letter-spacing: 3px;
-	font-size: 14px;
-	color: #fff;
-	text-decoration: none;
-}
-
-nav li a.logo {
-	display: none;
-}
-
-nav li a.active {
-	color: #fff;
-	background-color: #fff;
-}
-
-nav li a:hover {
-	color: #fff;
-	background-color: #293e6a;
-	text-decoration: none;
-}
-
-nav li:first-child a.active, nav li:first-child a:hover {
-	border-radius: 10px 0 0 0;
-}
-
-/* NAVIGATION ANNIMATION */
-nav {
-	width: 93%;
-	height: 100%;
-	position: fixed;
-	left: 0;
-	top: 0;
-	margin: 0;
-	background-color: #3b5998;
-	border-radius: 8px;
-	
-	/* starting point */
-	opacity: 0;
-	-webkit-transform: translate3d(5%,0,0)scale(.97);
-	-moz-transform: translate3d(5%,0,0)scale(.97);
-	transform: translate3d(5%,0,0)scale(.97);
-}
-
-/*Nav Expanding Open Effect*/
-nav.open {
-	opacity: 1;
-
-	-webkit-transform: translate3d(0,0,0)scale(1);
-	-webkit-animation: slideIn .35s ease-in-out;
-	
-	-moz-transform: translate3d(0,0,0)scale(1);
-	-moz-animation: slideIn .35s ease-in-out;
-	
-	transform: translate3d(0,0,0)scale(1);
-	animation: slideIn .35s ease-in-out;
-}
-
-@-webkit-keyframes slideIn {
-	0%       {opacity: 0;
-				-webkit-transform: translate3d(5%,0,0)scale(.97);}
-	100%  {opacity: 1;
-				-webkit-transform: translate3d(0,0,0)scale(1);}
-}
-
-@-moz-keyframes slideIn {
-	0%      {opacity: 0;
-				-moz-transform: translate3d(5%,0,0)scale(.97);}
-	100%  {opacity: 1;
-				-moz-transform: translate3d(0,0,0)scale(1);}
-}
-
-@keyframes slideIn {
-	0%      {opacity: 0;
-				transform: translate3d(5%,0,0)scale(.97);}
-	100%  {opacity: 1;
-				transform: translate3d(0,0,0)scale(1);}
-}
-
-/*Nav Shrinking Closed Effect*/
-nav.li.closed{
-	opacity: 0;
-	z-index: 0;
-}
-
-nav.closed {
-	opacity: 0;
-	z-index: 0;
-	-webkit-transform: translate3d(5%,0,0)scale(.97);
-	-webkit-animation: slideOut .3s ease-in-out;
-	
-	-moz-transform: translate3d(5%,0,0)scale(.97);
-	-moz-animation: slideOut .3s ease-in-out;
-	
-	transform: translate3d(5%,0,0)scale(.97);
-	animation: slideOut .3s ease-in-out;
-}
-
-@-webkit-keyframes slideOut {
-	0%      {opacity: 1;
-				-webkit-transform: translate3d(0,0,0)scale(1);}
-	100%  {opacity: 0;
-				-webkit-transform: translate3d(5%,0,0)scale(.97);}
-}
-
-@-moz-keyframes slideOut {
-	0%      {opacity: 1;
-				-moz-transform: translate3d(0,0,0)scale(1);}
-	100%  {opacity: 0;
-				-moz-transform: translate3d(5%,0,0)scale(.97);}
-}
-
-@keyframes slideOut {
-	0%      {opacity: 1;
-				transform: translate3d(0,0,0)scale(1);}
-	100%  {opacity: 0;
-				transform: translate3d(5%,0,0)scale(.97);}
-}
-
-
-
-/* CONTENT ANNIMATION */
-.content {
-	/* starting point */
-	-webkit-transform: translate3d(0,0,0);
-	-moz-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-
-/*Content Sliding Open Effect*/
-header.open, .content.open 
-{   
-	-webkit-transform: translate3d(240px,0,0);
-	-webkit-animation: open .5s ease-in-out;
-	
-	-moz-transform: translate3d(240px,0,0);
-	-moz-animation: open .5s ease-in-out;
-	
-	transform: translate3d(240px,0,0);
-	animation: open .5s ease-in-out;
-}
-
-@-webkit-keyframes open {
-	0%      {-webkit-transform: translate3d(0,0,0);}
-	70%    {-webkit-transform: translate3d(260px,0,0);}
-	100%  {-webkit-transform: translate3d(240px,0,0);}
-}
-
-@-moz-keyframes open {
-	0%      {-moz-transform: translate3d(0,0,0);}
-	70%    {-moz-transform: translate3d(260px,0,0);}
-	100%  {-moz-transform: translate3d(240px,0,0);}
-}
-
-@keyframes open {
-	0%      {transform: translate3d(0,0,0);}
-	70%    {transform: translate3d(260px,0,0);}
-	100%  {transform: translate3d(240px,0,0);}
-}
-
-/*Content Sliding Closed Effect*/
-header.closed {
-	font: 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	color: #555555;
-	text-rendering: optimizelegibility;
-
-	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	-webkit-animation: close .3s ease-in-out;
-	
-	-moz-transform: translate3d(0,0,0);
-	-moz-animation: close .3s ease-in-out;
-	
-	transform: translate3d(0,0,0);
-	animation: close .3s ease-in-out;
-}
-
-@-webkit-keyframes close {
-	0%      {-webkit-transform: translate3d(240px,0,0);}
-	100%  {-webkit-transform: translate3d(0,0,0);}
-}
-
-@-moz-keyframes close {
-	0%       {-moz-transform: translate3d(240px,0,0);}
-	100%  {-moz-transform: translate3d(0,0,0);}
-}
-
-@keyframes close {
-	0%       {transform: translate3d(240px,0,0);}
-	100%  {transform: translate3d(0,0,0);}
-}
-
-.content.closed {
-	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	-webkit-animation: close .3s ease-in-out;
-	
-	-moz-transform: translate3d(0,0,0);
-	-moz-animation: close .3s ease-in-out;
-	
-	transform: translate3d(0,0,0);
-	animation: close .3s ease-in-out;
-}
-
-@-webkit-keyframes close {
-	0%      {-webkit-transform: translate3d(240px,0,0);}
-	100%  {-webkit-transform: translate3d(0,0,0);}
-}
-
-@-moz-keyframes close {
-	0%       {-moz-transform: translate3d(240px,0,0);}
-	100%  {-moz-transform: translate3d(0,0,0);}
-}
-
-@keyframes close {
-	0%       {transform: translate3d(240px,0,0);}
-	100%  {transform: translate3d(0,0,0);}
 }
