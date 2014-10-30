@@ -75,20 +75,16 @@ nav li i {
 }
 
 .nav-open {
-	/* Chrome, Safari, Opera */
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
-	/* standard syntax */
 	transision: transform 0.3s linear;
     transform: translateX(180px);
     position: fixed;
 }
 
 .nav-closed {
-	/* Chrome, Safari, Opera */
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(0) ;
-	/* standard syntax */
 	transision: transform 0.3s linear;
     transform: 0.3 stranslateX(0) ;
     position: fixed;
@@ -104,25 +100,21 @@ nav li i {
 }
 
 .cont-open {
-	/* Chrome, Safari, Opera */
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
-	/* standard syntax */
 	transision: transform 0.3s linear;
     transform: translateX(180px);
 }
 
 .cont-closed {
-	/* Chrome, Safari, Opera */
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(0) ;
-	/* standard syntax */
 	transision: transform 0.3s linear;
     transform: 0.3 stranslateX(0) ;
 }
+
 /* settings when screen smaller than 992px */
 @media only screen and (max-width: 992px) {
 	header {
 		text-align: center;
 	}
-}
