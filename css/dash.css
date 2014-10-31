@@ -1,6 +1,7 @@
 /* color scheme at http://paletton.com/#uid=53z0u0kU1Ktq8RtACTbTRtwTdmS */
 html, body {
 	width: 100%;
+	overflow-x: hidden;
 }
 
 header {
@@ -9,6 +10,8 @@ header {
 	position: fixed;
 	z-index: 3;
 	width: 100%;
+	/* add the following line to eliminate blink when scroll */
+	-webkit-transform: translate3d(0,0,0);
 }
 
 header h1 {
@@ -112,6 +115,10 @@ nav li i {
 	-webkit-transform: translateX(0) ;
 	transision: transform 0.3s linear;
     transform: 0.3 stranslateX(0) ;
+}
+
+.content-div {
+	padding: 20px;
 }
 
 /* settings when screen smaller than 992px */
