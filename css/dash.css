@@ -106,7 +106,8 @@ nav li i {
 	background-color: #eeeeee;
 	width: calc(100% - 240px);
 	z-index: 5;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden; 
 	margin-top: 50px;
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
@@ -130,6 +131,7 @@ nav li i {
 
 .content-div {
 	padding: 20px;
+	min-height: 300px;
 }
 
 /* settings when screen smaller than 992px */
@@ -180,5 +182,5 @@ nav li i {
 		-webkit-transform: translateX(0);
 		transision: transform 0.3s linear;
 	    transform: 0.3 stranslateX(0);
-}
+	}
 }
