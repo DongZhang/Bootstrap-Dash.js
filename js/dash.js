@@ -15,6 +15,15 @@ $(function () {
     $('#navtoggle').on(clickevent, function (event) {
         event.stopPropagation();
         event.preventDefault();
+        if (!nav.hasClass('nav-closed')) {
+            close();
+        } else {
+            open();
+        }
+    });
+    $('#navtoggle-s').on(clickevent, function (event) {
+        event.stopPropagation();
+        event.preventDefault();
         if (!nav.hasClass('nav-open')) {
             open();
         } else {

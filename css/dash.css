@@ -78,6 +78,13 @@ nav li i {
 	padding: 5px 0 5px 0;
 }
 
+.nav {
+	-webkit-transition: -webkit-transform 0.3s linear;
+	-webkit-transform: translateX(180px);
+	transision: transform 0.3s linear;
+    transform: translateX(180px);
+}
+
 .nav-open {
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
@@ -88,9 +95,9 @@ nav li i {
 
 .nav-closed {
 	-webkit-transition: -webkit-transform 0.3s linear;
-	-webkit-transform: translateX(0) ;
+	-webkit-transform: translateX(0);
 	transision: transform 0.3s linear;
-    transform: 0.3 stranslateX(0) ;
+    transform: 0.3 stranslateX(0);
     position: fixed;
 }
 
@@ -101,6 +108,10 @@ nav li i {
 	z-index: 5;
 	overflow: auto;
 	margin-top: 50px;
+	-webkit-transition: -webkit-transform 0.3s linear;
+	-webkit-transform: translateX(180px);
+	transision: transform 0.3s linear;
+    transform: translateX(180px);
 }
 
 .cont-open {
@@ -112,9 +123,9 @@ nav li i {
 
 .cont-closed {
 	-webkit-transition: -webkit-transform 0.3s linear;
-	-webkit-transform: translateX(0) ;
+	-webkit-transform: translateX(0);
 	transision: transform 0.3s linear;
-    transform: 0.3 stranslateX(0) ;
+    transform: 0.3 stranslateX(0);
 }
 
 .content-div {
@@ -126,3 +137,48 @@ nav li i {
 	header {
 		text-align: center;
 	}
+
+	.nav {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(0);
+		transision: transform 0.3s linear;
+	    transform: 0.3 stranslateX(0);
+	}
+
+	.nav-open {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(180px);
+		transision: transform 0.3s linear;
+	    transform: translateX(180px);
+	    position: fixed;
+	}
+
+	.nav-closed {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(0);
+		transision: transform 0.3s linear;
+	    transform: 0.3 stranslateX(0);
+	    position: fixed;
+	}
+
+	.content {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(0);
+		transision: transform 0.3s linear;
+	    transform: 0.3 stranslateX(0);
+	}
+
+	.cont-open {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(180px);
+		transision: transform 0.3s linear;
+	    transform: translateX(180px);
+	}
+
+	.cont-closed {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(0);
+		transision: transform 0.3s linear;
+	    transform: 0.3 stranslateX(0);
+}
+}
