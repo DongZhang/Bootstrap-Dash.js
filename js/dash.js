@@ -41,73 +41,42 @@ $(function () {
         $(content).removeClass('cont-open').addClass('cont-closed');
     }
 
-    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-
-    var barChartData = {
-        labels : ["January","February","March","April","May","June","July"],
-        datasets : [
-            {
-                fillColor : "rgba(220,220,220,0.5)",
-                strokeColor : "rgba(220,220,220,0.8)",
-                highlightFill: "rgba(220,220,220,0.75)",
-                highlightStroke: "rgba(220,220,220,1)",
-                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-            },
-            {
-                fillColor : "rgba(151,187,205,0.5)",
-                strokeColor : "rgba(151,187,205,0.8)",
-                highlightFill : "rgba(151,187,205,0.75)",
-                highlightStroke : "rgba(151,187,205,1)",
-                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+    var chart1 = c3.generate({
+        bindto: '#chart1',
+        data: {
+            columns: [
+                ['data1', 300, 350, 300, 0, 0, 0],
+                ['data2', 130, 100, 140, 200, 150, 50]
+            ],
+            types: {
+                data1: 'area',
+                data2: 'area-spline'
             }
-        ]
-
-    }
-
-    var pieData = [
-        {
-            value: 300,
-            color:"#F7464A",
-            highlight: "#FF5A5E",
-            label: "Red"
-        },
-        {
-            value: 50,
-            color: "#46BFBD",
-            highlight: "#5AD3D1",
-            label: "Green"
-        },
-        {
-            value: 100,
-            color: "#FDB45C",
-            highlight: "#FFC870",
-            label: "Yellow"
-        },
-        {
-            value: 40,
-            color: "#949FB1",
-            highlight: "#A8B3C5",
-            label: "Grey"
-        },
-        {
-            value: 120,
-            color: "#4D5360",
-            highlight: "#616774",
-            label: "Dark Grey"
         }
+    });
 
-    ];
-
-    window.onload = function () {
-        var ctx = document.getElementById("chart1").getContext("2d");
-        window.myBar = new Chart(ctx).Bar(barChartData, {
-            responsive : false
-        });
-        var ctx = document.getElementById("chart2").getContext("2d");
-        window.myPie = new Chart(ctx).Pie(pieData);
-    };
-
-
+    var chart2 = c3.generate({
+        bindto: '#chart2',
+        data: {
+            columns: [
+                ['data1', 30, 20, 50, 40, 60, 50],
+                ['data2', 200, 130, 90, 240, 130, 220],
+                ['data3', 300, 200, 160, 400, 250, 250],
+                ['data4', 200, 130, 90, 240, 130, 220],
+                ['data5', 130, 120, 150, 140, 160, 150],
+                ['data6', 90, 70, 20, 50, 60, 120],
+            ],
+            type: 'bar',
+            types: {
+                data3: 'spline',
+                data4: 'line',
+                data6: 'area',
+            },
+            groups: [
+                ['data1','data2']
+            ]
+        }
+    });
     var chart3 = c3.generate({
         bindto: '#chart3',
         data: {

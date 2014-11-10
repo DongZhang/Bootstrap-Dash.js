@@ -104,11 +104,12 @@ nav li i {
 .content {
 	float: right;
 	background-color: #eeeeee;
-	width: calc(100% - 240px);
+	width: calc(100% - 420px);
 	z-index: 5;
 	overflow-y: auto;
 	overflow-x: hidden; 
 	margin-top: 50px;
+	margin-right: 181px;
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
 	transision: transform 0.3s linear;
@@ -116,21 +117,27 @@ nav li i {
 }
 
 .cont-open {
-	-webkit-transition: -webkit-transform 0.3s linear;
+	width: calc(100% - 420px);
+	-webkit-transition: width 0.3s linear;
+	transform: width 0.3s linear;
+/*	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
 	transision: transform 0.3s linear;
-    transform: translateX(180px);
+    transform: translateX(180px);*/
 }
 
 .cont-closed {
-	-webkit-transition: -webkit-transform 0.3s linear;
+	width: calc(100% - 240px);
+	-webkit-transition: width 0.3s linear;
+	transform: width 0.3s linear;
+/*	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(0);
 	transision: transform 0.3s linear;
-    transform: 0.3 stranslateX(0);
+    transform: 0.3 stranslateX(0);*/
 }
 
 .content-div {
-	padding: 20px;
+	padding: 10px;
 	min-height: 300px;
 }
 
@@ -164,6 +171,8 @@ nav li i {
 	}
 
 	.content {
+		margin-right: 0px;
+		width: calc(100% - 240px);
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(0);
 		transision: transform 0.3s linear;
@@ -184,3 +193,4 @@ nav li i {
 	    transform: 0.3 stranslateX(0);
 	}
 }
+
