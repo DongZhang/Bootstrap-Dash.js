@@ -10,97 +10,56 @@ $(function () {
     }
     var clickevent = mobilecheck() ? 'touchstart' : 'click';
 
-    var nav = $('.nav');
-    var content = $('.content');
-    $('#navtoggle').on(clickevent, function (event) {
+    var nav_auto = $('.nav-auto');
+    var content_auto = $('.content-auto');
+    var nav_fixed = $('.nav-fixed');
+    var content_fixed = $('.content-fixed');
+    $('#navtoggle-auto').on(clickevent, function (event) {
         event.stopPropagation();
         event.preventDefault();
-        if (!nav.hasClass('nav-closed')) {
-            close();
+        if (!nav_auto.hasClass('nav-auto-closed')) {
+            close_auto();
         } else {
-            open();
+            open_auto();
         }
     });
     $('#navtoggle-s').on(clickevent, function (event) {
         event.stopPropagation();
         event.preventDefault();
-        if (!nav.hasClass('nav-open')) {
-            open();
+        if (!nav.hasClass('nav-auto-open')) {
+            open_auto();
         } else {
-            close();
+            close_auto();
         }
     });
-
-    function open () {
-        $(nav).removeClass('nav-closed').addClass('nav-open');
-        $(content).removeClass('cont-closed').addClass('cont-open');
-    }
-
-    function close () {
-        $(nav).removeClass('nav-open').addClass('nav-closed');
-        $(content).removeClass('cont-open').addClass('cont-closed');
-    }
-
-    var chart1 = c3.generate({
-        bindto: '#chart1',
-        data: {
-            columns: [
-                ['data1', 300, 350, 300, 0, 0, 0],
-                ['data2', 130, 100, 140, 200, 150, 50]
-            ],
-            types: {
-                data1: 'area',
-                data2: 'area-spline'
-            }
+    $('#navtoggle-fixed').on(clickevent, function(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        if (!nav_fixed.hasClass('nav-fixed-opened')) {
+            open_fixed();
+        } else {
+            close_fixed();
         }
     });
-
-    var chart2 = c3.generate({
-        bindto: '#chart2',
-        data: {
-            columns: [
-                ['data1', 30, 20, 50, 40, 60, 50],
-                ['data2', 200, 130, 90, 240, 130, 220],
-                ['data3', 300, 200, 160, 400, 250, 250],
-                ['data4', 200, 130, 90, 240, 130, 220],
-                ['data5', 130, 120, 150, 140, 160, 150],
-                ['data6', 90, 70, 20, 50, 60, 120],
-            ],
-            type: 'bar',
-            types: {
-                data3: 'spline',
-                data4: 'line',
-                data6: 'area',
-            },
-            groups: [
-                ['data1','data2']
-            ]
-        }
-    });
-    var chart3 = c3.generate({
-        bindto: '#chart3',
-        data: {
-            columns: [
-                ['data1', 30, 200, 100, 400, 150, 250],
-                ['data2', 50, 20, 10, 40, 15, 25]
-            ],
-            type: 'bar',
-        },
-        bar: {
-            width: {
-                ratio: 0.5
-            }
-        }
-    });
-
-    var chart4 = c3.generate({
-        bindto: '#chart4',
-        data: {
-            columns: [
-                ['data1', 30],
-                ['data2', 120],
-            ],
-            type: 'pie',
-        }
-    })
+    // $('#html-fixed').on(clickevent, function(event) {
+    //     event.stopPropagation();
+    //     event.preventDefault();
+    //     close_fixed();
+    // });
+    function open_auto() {
+        $(nav_auto).removeClass('nav-auto-closed').addClass('nav-auto-open');
+        $(content_auto).removeClass('content-auto-closed').addClass('content-auto-open');
+    };
+    function close_auto() {
+        $(nav_auto).removeClass('nav-auto-open').addClass('nav-auto-closed');
+        $(content_auto).removeClass('content-auto-open').addClass('content-auto-closed');
+    };
+    function open_fixed() {
+        nav_fixed.removeClass('nav-fixed-closed').addClass('nav-fixed-opened');
+        content_fixed.removeClass('content-fixed-closed').addClass('content-fixed-opened');
+    };
+    function close_fixed() {
+        nav_fixed.removeClass('nav-fixed-opened').addClass('nav-fixed-closed');
+        content_fixed.removeClass('content-fixed-opened').addClass('content-fixed-closed');
+    };
 });

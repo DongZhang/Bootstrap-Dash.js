@@ -1,27 +1,28 @@
 /* color scheme at http://paletton.com/#uid=53z0u0kU1Ktq8RtACTbTRtwTdmS */
 html, body {
 	width: 100%;
+	min-height: 100%;
 	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 header {
 	height: 50px;
+	width: 100%;
 	background-color: #023F76;
 	position: fixed;
 	z-index: 3;
-	width: 100%;
 	/* add the following line to eliminate blink when scroll */
 	-webkit-transform: translate3d(0,0,0);
 }
 
 header h1 {
-	margin: auto;
-	padding-top: 5px;
-	margin-left: 65px;
+	margin: 5px 0 0 65px;
 	color: #eeeeee;
 }
 
 .burger {
+	width: 50px;
 	position: absolute;
 	float: left;
 	padding: 10px;
@@ -37,7 +38,7 @@ header h1 {
 	height: 4px;
 	background-color: #82BEE5;
 	border-radius: 3px;
-	margin: 5px 0;
+	margin: 3px 0;
 	list-style: none;
 	margin-right: 0;
 }
@@ -47,7 +48,7 @@ header h1 {
 	margin-left: -180px;
 }
 
-nav {
+.nav-auto {
 	background-color: #025198;
 	width: 240px;
 	height: 100vh;
@@ -57,11 +58,11 @@ nav {
 	top: 50px;
 }
 
-nav ul {
+.nav-auto ul {
 	padding: 0;
 }
 
-nav li {
+.nav-auto li {
 	list-style: none;
 	height: 50px;
 	font-size: 20px;
@@ -72,20 +73,20 @@ nav li {
 	padding: 10px 5px 10px 10px;
 }
 
-nav li i {
+.nav-auto li i {
 	margin-right: 15px;
 	float: right;
 	padding: 5px 0 5px 0;
 }
 
-.nav {
+.nav-auto {
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
 	transision: transform 0.3s linear;
     transform: translateX(180px);
 }
 
-.nav-open {
+.nav-auto-open {
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
 	transision: transform 0.3s linear;
@@ -93,7 +94,7 @@ nav li i {
     position: fixed;
 }
 
-.nav-closed {
+.nav-auto-closed {
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(0);
 	transision: transform 0.3s linear;
@@ -101,7 +102,7 @@ nav li i {
     position: fixed;
 }
 
-.content {
+.content-auto {
 	float: right;
 	background-color: #eeeeee;
 	width: calc(100% - 420px);
@@ -116,7 +117,7 @@ nav li i {
     transform: translateX(180px);
 }
 
-.cont-open {
+.content-open {
 	width: calc(100% - 420px);
 	-webkit-transition: width 0.3s linear;
 	transform: width 0.3s linear;
@@ -126,7 +127,7 @@ nav li i {
     transform: translateX(180px);*/
 }
 
-.cont-closed {
+.content-closed {
 	width: calc(100% - 240px);
 	-webkit-transition: width 0.3s linear;
 	transform: width 0.3s linear;
@@ -141,20 +142,68 @@ nav li i {
 	min-height: 300px;
 }
 
+
+/* FIXED-NAV related CSS */
+header li {
+	color: #fff;
+	float: right;
+}
+
+.content-fixed h1 {
+	margin: 5px 20px;
+}
+
+.nav-fixed {
+	position: fixed;
+	height: 50px;
+	top: 0;
+	right: 0;
+	z-index: 3;
+}
+
+.nav-fixed li {
+	list-style: none;
+	float: left;
+	display: inline-block;
+	padding: 15px 30px 0 0;
+}
+
+.nav-fixed h1 {
+	margin: 0;
+}
+
+.nav-fixed li a {
+	color: #fff;
+	font-size: 15px;
+	display: block;
+	text-decoration: none;
+}
+
+.nav-fixed li a:hover {
+	color: #fff;
+	background-color: #CC2626;
+	text-decoration: underline;
+}
+
+.wrapper {
+	margin-top: 70px;
+	z-index: 0;
+}
+
 /* settings when screen smaller than 992px */
 @media only screen and (max-width: 992px) {
 	header {
 		text-align: center;
 	}
 
-	.nav {
+	.nav-auto {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(0);
 		transision: transform 0.3s linear;
 	    transform: 0.3 stranslateX(0);
 	}
 
-	.nav-open {
+	.nav-auto-open {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(180px);
 		transision: transform 0.3s linear;
@@ -162,7 +211,7 @@ nav li i {
 	    position: fixed;
 	}
 
-	.nav-closed {
+	.nav-auto-closed {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(0);
 		transision: transform 0.3s linear;
@@ -170,7 +219,7 @@ nav li i {
 	    position: fixed;
 	}
 
-	.content {
+	.content-auto {
 		margin-right: 0px;
 		width: calc(100% - 240px);
 		-webkit-transition: -webkit-transform 0.3s linear;
@@ -179,18 +228,71 @@ nav li i {
 	    transform: 0.3 stranslateX(0);
 	}
 
-	.cont-open {
+	.content-auto-open {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(180px);
 		transision: transform 0.3s linear;
 	    transform: translateX(180px);
 	}
 
-	.cont-closed {
+	.content-auto-closed {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(0);
 		transision: transform 0.3s linear;
 	    transform: 0.3 stranslateX(0);
 	}
-}
 
+	/* FIXED-NAV related CSS */
+	.nav-fixed {
+		float: left;
+		display: block;
+		width: 250px;
+		height: 100%;
+		left: 0;
+		margin-left: -250px;
+		background-color: #333;
+		position: fixed;
+	}
+
+	.nav-fixed li {
+		width: 100%;
+		height: 60px;
+		padding: 0;
+		background-color: #333;
+	}
+
+	.nav-fixed li a {
+		font-size: 13px;
+		padding: 20px 0 20px 10px;
+		height: 60px;
+		background-color: #333;
+	}
+
+	.nav-fixed-opened {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(250px);
+		transition: transform 0.3s linear;
+		transform: translateX(250px);
+	}
+
+	.nav-fixed-closed {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(0px);
+		transition: transform 0.3s linear;
+		transform: translateX(0px);		
+	}
+
+	.content-fixed-opened {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(250px);
+		transition: transform 0.3s linear;
+		transform: translateX(250px);
+	}
+
+	.content-fixed-closed {
+		-webkit-transition: -webkit-transform 0.3s linear;
+		-webkit-transform: translateX(0px);
+		transition: transform 0.3s linear;
+		transform: translateX(0px);
+	}
+}
