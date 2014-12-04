@@ -6,62 +6,80 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/dash.css">
-	<link res="stylesheet" type="text/css" href="css/c3.css">
 </head>
 <body>
-	<header class="">
+	<header>
 		<h1>
 			Bootstrap-Dash.js
 		</h1>
-		<ul class="burger visible-lg visible-md" id="navtoggle-auto">
-			<li></li><li></li><li></li>
-		</ul>
-		<ul class="burger visible-sm visible-xs" id="navtoggle-s">
+		<ul class="burger" id="navtoggle-auto">
 			<li></li><li></li><li></li>
 		</ul>
 	</header>
-	<div >
-		<nav class="nav-auto" id="nav">
-			<ul>
-				<li>
-					<a href="">
-						EXAMPLE 1
-						<i class="fa fa-area-chart"></i>
-					</a>
-				</li>
-				<li>
-					<a href="index2.html">
-						EXAMPLE 2
-						<i class="fa fa-area-chart"></i>
-					</a>
-				</li>
-				<li>
-					Charts
+	<nav class="nav-auto">
+		<ul>
+			<li>
+				<a href="">
+					EXAMPLE 1
 					<i class="fa fa-area-chart"></i>
-				</li>
-				<li>
-					Charts
+				</a>
+			</li>
+			<li>
+				<a href="index2.html">
+					EXAMPLE 2
 					<i class="fa fa-area-chart"></i>
-				</li>
-				<li>
-					Charts
+				</a>
+			</li>
+			<li>
+				<a href="">
+					LINK 1
 					<i class="fa fa-area-chart"></i>
-				</li>
-
-			</ul>
-		</nav>
-		<div class="content-auto">
-<!-- 			<div class="row" style="height: 800px; margin: 0;">
-				<div class="col-md-6 content-div" id="chart1"></div>
-				<div class="col-md-6 content-div" id="chart2"></div>
-				<div class="col-md-6 content-div" id="chart3"></div>
-				<div class="col-md-6 content-div" id="chart4"></div>
-			</div> -->
+				</a>
+			</li>
+			<li>
+				<a href="">
+					LINK 2
+					<i class="fa fa-area-chart"></i>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					LINK 3
+					<i class="fa fa-area-chart"></i>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="content-auto">
+		<div style="padding: 20px;">
+			<h3>Basic usage for NAV-AUTO</h3>
+			<p>include the following stylesheets in header</p>
+<pre>
+&lt;link rel="stylesheet" type="text/css" href="css/bootstrap.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/dash.css"&gt;
+</pre>
+			<p>include the following js files</p>
+<pre>
+&lt;script src="js/jquery-1.10.1.js"&gt;&lt;/script&gt;
+&lt;script src="js/bootstrap.js"&gt;&lt;/script&gt;
+&lt;script src="js/dash.js"&gt;&lt;/script&gt;
+</pre>
+			<p>using classes and ids properly</p>
+<pre>
+&lt;header&gt;
+	&lt;h1&gt;Your h1&lt;/h1&gt;
+	&lt;ul class="burger" id="navtoggle-auto"&gt;
+		&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/header&gt;
+&lt;nav class="nav-auto"&gt;
+&lt;/nav&gt;
+&lt;div class="content-auto"&gt;
+&lt;/div&gt;
+</pre>
 		</div>
 	</div>
 	<script src="js/jquery-1.10.1.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/dash.js"></script>
-	<script src="js/c3.js"></script>
-	<script src="js/d3.js"></script>
 </body>
