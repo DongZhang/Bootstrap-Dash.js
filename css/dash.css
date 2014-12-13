@@ -43,8 +43,6 @@ header h1 {
 	margin-right: 0;
 }
 
-
-
 nav li a{
 	font-size: 18px;
 	color: #fff;
@@ -54,12 +52,6 @@ nav li a:hover {
 	color: #fff;
 	text-decoration: none;
 }
-
-/*.wrapper {
-	position: relative;
-	margin-left: -180px;
-}*/
-
 
 /* AUTO-NAV related CSS */
 .nav-auto {
@@ -98,14 +90,14 @@ nav li a:hover {
 .nav-auto {
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
-	transision: transform 0.3s linear;
+	transition: transform 0.3s linear;
     transform: translateX(180px);
 }
 
 .nav-auto-open {
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
-	transision: transform 0.3s linear;
+	transition: transform 0.3s linear;
     transform: translateX(180px);
     position: fixed;
 }
@@ -113,8 +105,8 @@ nav li a:hover {
 .nav-auto-closed {
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(0);
-	transision: transform 0.3s linear;
-    transform: 0.3 stranslateX(0);
+	transition: transform 0.3s linear;
+    transform: translateX(0);
     position: fixed;
 }
 
@@ -129,12 +121,15 @@ nav li a:hover {
 	margin-right: 180px;
 	-webkit-transition: -webkit-transform 0.3s linear;
 	-webkit-transform: translateX(180px);
-	transision: transform 0.3s linear;
+	transition: transform 0.3s linear;
     transform: translateX(180px);
 }
 
 .content-auto-opened {
 	width: calc(100% - 240px);
+}
+
+.content-auto-opened-animation {
 	-webkit-transition: width 0.3s linear;
 	transform: width 0.3s linear;
 }
@@ -144,11 +139,6 @@ nav li a:hover {
 	-webkit-transition: width 0.3s linear;
 	transform: width 0.3s linear;
 }
-
-/*.content-div {
-	padding: 10px;
-	min-height: 300px;
-}*/
 
 
 /* FIXED-NAV related CSS */
@@ -189,16 +179,6 @@ header li {
 	margin-top: 50px;
 }
 
-/*.nav-fixed li a:hover {
-	color: #fff;
-	text-decoration: underline;
-}*/
-
-/*.wrapper {
-	margin-top: 70px;
-	z-index: 0;
-}*/
-
 /* settings when screen smaller than 992px */
 @media only screen and (max-width: 992px) {
 	header {
@@ -213,14 +193,14 @@ header li {
 	.nav-auto {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(0);
-		transision: transform 0.3s linear;
-	    transform: 0.3 stranslateX(0);
+		transition: transform 0.3s linear;
+	    transform: translateX(0);
 	}
 
 	.nav-auto-opened {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(180px);
-		transision: transform 0.3s linear;
+		transition: transform 0.3s linear;
 	    transform: translateX(180px);
 	    position: fixed;
 	}
@@ -228,8 +208,8 @@ header li {
 	.nav-auto-closed {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(0);
-		transision: transform 0.3s linear;
-	    transform: 0.3 stranslateX(0);
+		transition: transform 0.3s linear;
+	    transform: translateX(0);
 	    position: fixed;
 	}
 
@@ -238,22 +218,27 @@ header li {
 		width: calc(100% - 60px);
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(0);
-		transision: transform 0.3s linear;
-	    transform: 0.3 stranslateX(0);
+		transition: transform 0.3s linear;
+	    transform: translateX(0);
 	}
 
 	.content-auto-opened {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(180px);
-		transision: transform 0.3s linear;
+		transition: transform 0.3s linear;
 	    transform: translateX(180px);
 	}
 
 	.content-auto-closed {
+		-webkit-transition: none !important;
+		transition: none !important;
+	}
+
+	.content-auto-closed-animation {
 		-webkit-transition: -webkit-transform 0.3s linear;
 		-webkit-transform: translateX(0);
-		transision: transform 0.3s linear;
-	    transform: 0.3 stranslateX(0);
+		transition: transform 0.3s linear;
+	    transform: translateX(0);		
 	}
 
 	/* FIXED-NAV related CSS */
@@ -273,7 +258,6 @@ header li {
 		width: 100%;
 		height: 50px;
 		padding: 0;
-		/*background-color: #333;*/
 	}
 
 	.nav-fixed li:hover {
@@ -283,7 +267,6 @@ header li {
 	.nav-fixed li a {
 		padding: 15px 0 15px 10px;
 		height: 60px;
-		/*background-color: #333;*/
 	}
 
 	.nav-fixed-opened {
