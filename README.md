@@ -4,6 +4,8 @@ Bootstrap-trunk-js
 A nice and fully-featured responsive system provide two kind of navigation menu.
 JQuery and Bootstrap are needed.
 
+View [demo](http://dongzhang.github.io/Bootstrap-Dash.js/demo1.html)
+
 ##Basic usage
 include the following stylesheets in header
 ```
